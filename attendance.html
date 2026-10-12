@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance | SchoolSync</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="attendance.css">
+
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                SS
+            </div>
+
+            <div>
+                <h2>SchoolSync</h2>
+                <span>University Administration</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="student.html" class="nav-item">
+                <span>♙</span>
+                Students
+            </a>
+
+            <a href="lecturers.html" class="nav-item">
+                <span>♟</span>
+                Lecturers
+            </a>
+
+            <a href="department.html" class="nav-item">
+                <span>▣</span>
+                Departments
+            </a>
+
+
+            <p class="nav-title">
+                ACADEMICS
+            </p>
+
+            <a href="course.html" class="nav-item">
+                <span>▤</span>
+                Courses
+            </a>
+
+            <a href="registration.html" class="nav-item">
+                <span>◫</span>
+                Course Registration
+            </a>
+
+            <a href="result.html" class="nav-item">
+                <span>◈</span>
+                Results
+            </a>
+
+            <a href="attendance.html" class="nav-item active">
+                <span>◷</span>
+                Attendance
+            </a>
+
+
+            <p class="nav-title">
+                ADMINISTRATION
+            </p>
+
+            <a href="report.html" class="nav-item">
+                <span>▤</span>
+                Reports
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+                <span>▰</span>
+                Announcements
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="index.html" class="nav-item logout">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div class="profile-info">
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <span>
+                    System Admin
+                </span>
+
+            </div>
+
+            <button class="profile-menu">
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    SchoolSync / Attendance
+                </p>
+
+                <h1>
+                    Attendance Management
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="notification-btn">
+                    🔔
+                    <span></span>
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            System Admin
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ATTENDANCE FORM -->
+
+        <section class="attendance-card">
+
+            <div class="card-title">
+
+                <div>
+
+                    <h2>
+                        Record Attendance
+                    </h2>
+
+                    <p>
+                        Record student attendance for a course.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="attendance-form">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Student
+                    </label>
+
+                    <select id="studentSelect">
+
+                        <option value="">
+                            Select Student
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Course
+                    </label>
+
+                    <select id="courseSelect">
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select id="attendanceStatus">
+
+                        <option value="">
+                            Select Status
+                        </option>
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                        <option value="Late">
+                            Late
+                        </option>
+
+                        <option value="Excused">
+                            Excused
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="saveAttendanceBtn"
+                >
+                    Save Attendance
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATTENDANCE STATISTICS -->
+
+        <section class="attendance-stats">
+
+            <div class="attendance-stat">
+
+                <span>
+                    Total Records
+                </span>
+
+                <strong id="totalAttendance">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="attendance-stat">
+
+                <span>
+                    Present
+                </span>
+
+                <strong id="presentCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="attendance-stat">
+
+                <span>
+                    Absent
+                </span>
+
+                <strong id="absentCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="attendance-stat">
+
+                <span>
+                    Attendance Rate
+                </span>
+
+                <strong id="attendanceRate">
+                    0%
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATTENDANCE TABLE -->
+
+        <section class="attendance-card">
+
+            <div class="card-title">
+
+                <div>
+
+                    <h2>
+                        Attendance Records
+                    </h2>
+
+                    <p>
+                        View and manage attendance records.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Course
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="attendanceTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="5"
+                                class="empty-table"
+                            >
+                                No attendance records yet.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="attendance.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SchoolSync | Students</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="student.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="dashboard-container">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    SS
+                </div>
+
+                <div>
+
+                    <h2>
+                        SchoolSync
+                    </h2>
+
+                    <span>
+                        University Administration
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <p class="nav-title">
+                    MAIN MENU
+                </p>
+
+
+                <a
+                    href="dashboard.html"
+                    class="nav-item"
+                >
+
+                    <span>▦</span>
+
+                    Dashboard
+
+                </a>
+
+
+                <a
+                    href="students.html"
+                    class="nav-item active"
+                >
+
+                    <span>♙</span>
+
+                    Students
+
+                </a>
+
+
+                <a href="lecturers.html" class="nav-item">
+
+                    <span>♟</span>
+
+                    Lecturers
+
+                </a>
+
+
+                <a href="department.html" class="nav-item">
+
+                    <span>▣</span>
+
+                    Departments
+
+                </a>
+
+
+                <p class="nav-title">
+                    ACADEMICS
+                </p>
+
+
+                <a href="course.html" class="nav-item">
+
+                    <span>▤</span>
+
+                    Courses
+
+                </a>
+
+
+                <a href="registration.html" class="nav-item">
+
+                    <span>◫</span>
+
+                    Course Registration
+
+                </a>
+
+
+                <a href="result.html" class="nav-item">
+
+                    <span>◈</span>
+
+                    Results
+
+                </a>
+
+
+                <a href="attendance.html" class="nav-item">
+
+                    <span>◷</span>
+
+                    Attendance
+
+                </a>
+
+
+                <p class="nav-title">
+                    ADMINISTRATION
+                </p>
+
+
+                <a href="report.html" class="nav-item">
+
+                    <span>▤</span>
+
+                    Reports
+
+                </a>
+
+
+                <a href="announcements.html" class="nav-item">
+
+                    <span>▰</span>
+
+                    Announcements
+
+                </a>
+
+
+                <a href="settings.html" class="nav-item">
+
+                    <span>⚙</span>
+
+                    Settings
+
+                </a>
+
+
+                <a
+                    href="index.html"
+                    class="nav-item logout"
+                >
+
+                    <span>↪</span>
+
+                    Logout
+
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-profile">
+
+                <div class="profile-avatar">
+                    A
+                </div>
+
+                <div class="profile-info">
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <span>
+                        System Admin
+                    </span>
+
+                </div>
+
+                <button class="profile-menu">
+                    ⋮
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="breadcrumb">
+                        SchoolSync / Students
+                    </p>
+
+                    <h1>
+                        Student Management
+                    </h1>
+
+                </div>
+
+
+                <div class="topbar-actions">
+
+                    <button class="notification-btn">
+                        🔔
+                        <span></span>
+                    </button>
+
+
+                    <div class="top-profile">
+
+                        <div class="top-avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Administrator
+                            </strong>
+
+                            <small>
+                                System Admin
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- PAGE HEADER -->
+
+            <section class="page-header">
+
+                <div>
+
+                    <span class="page-label">
+                        UNIVERSITY RECORDS
+                    </span>
+
+                    <h2>
+                        Student Directory
+                    </h2>
+
+                    <p>
+                        Manage student profiles, academic information
+                        and enrollment records.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="addStudentBtn"
+                    class="primary-btn"
+                >
+
+                    <span>
+                        +
+                    </span>
+
+                    Add Student
+
+                </button>
+
+            </section>
+
+
+            <!-- STATISTICS -->
+
+            <section class="student-stats">
+
+
+                <div class="student-stat">
+
+                    <div class="student-stat-icon blue">
+                        ♙
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Students
+                        </span>
+
+                        <strong id="totalStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat">
+
+                    <div class="student-stat-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Active Students
+                        </span>
+
+                        <strong id="activeStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat">
+
+                    <div class="student-stat-icon purple">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Undergraduate
+                        </span>
+
+                        <strong id="undergraduateStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-stat">
+
+                    <div class="student-stat-icon orange">
+                        ◉
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Postgraduate
+                        </span>
+
+                        <strong id="postgraduateStudents">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+            <!-- STUDENT TABLE -->
+
+            <section class="students-card">
+
+
+                <div class="students-toolbar">
+
+                    <div>
+
+                        <h3>
+                            Student Records
+                        </h3>
+
+                        <p>
+                            Registered students in the university.
+                        </p>
+
+                    </div>
+
+
+                    <div class="student-tools">
+
+
+                        <div class="search-box">
+
+                            <span>
+                                ⌕
+                            </span>
+
+                            <input
+                                type="search"
+                                id="searchStudent"
+                                placeholder="Search by name or matric number..."
+                            >
+
+                        </div>
+
+
+                        <select id="levelFilter">
+
+                            <option value="all">
+                                All Levels
+                            </option>
+
+                            <option value="100 Level">
+                                100 Level
+                            </option>
+
+                            <option value="200 Level">
+                                200 Level
+                            </option>
+
+                            <option value="300 Level">
+                                300 Level
+                            </option>
+
+                            <option value="400 Level">
+                                400 Level
+                            </option>
+
+                            <option value="500 Level">
+                                500 Level
+                            </option>
+
+                            <option value="Postgraduate">
+                                Postgraduate
+                            </option>
+
+                        </select>
+
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    STUDENT
+                                </th>
+
+                                <th>
+                                    MATRIC NUMBER
+                                </th>
+
+                                <th>
+                                    GENDER
+                                </th>
+
+                                <th>
+                                    LEVEL
+                                </th>
+
+                                <th>
+                                    DEPARTMENT
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="studentTableBody">
+
+                        </tbody>
+
+                    </table>
+
+
+                    <div
+                        id="emptyState"
+                        class="empty-state"
+                    >
+
+                        <div class="empty-icon">
+                            ♙
+                        </div>
+
+                        <h3>
+                            No student records found
+                        </h3>
+
+                        <p>
+                            Add your first university student
+                            to begin building the student directory.
+                        </p>
+
+                        <button
+                            id="emptyAddBtn"
+                            class="primary-btn"
+                        >
+
+                            +
+                            Add Student
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- ADD / EDIT STUDENT MODAL -->
+
+    <div
+        id="studentModal"
+        class="modal-overlay"
+    >
+
+
+        <div class="student-modal">
+
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span>
+                        UNIVERSITY STUDENT RECORD
+                    </span>
+
+                    <h2 id="modalTitle">
+                        Add New Student
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="closeModal"
+                    class="close-btn"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="studentForm">
+
+
+                <!-- ROW 1 -->
+
+                <div class="form-row">
+
+
+                    <div class="input-group">
+
+                        <label for="studentId">
+                            Matric Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentId"
+                            placeholder="e.g. 24/10MSS000"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="studentName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter student's full name"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Row 2 -->
+
+                <div class="form-row">
+
+
+                    <div class="input-group">
+
+                        <label for="studentGender">
+                            Gender
+                        </label>
+
+                        <select
+                            id="studentGender"
+                            required
+                        >
+
+                            <option value="">
+                                Select gender
+                            </option>
+
+                            <option value="Male">
+                                Male
+                            </option>
+
+                            <option value="Female">
+                                Female
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="studentLevel">
+                            Academic Level
+                        </label>
+
+                        <select
+                            id="studentLevel"
+                            required
+                        >
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option value="100 Level">
+                                100 Level
+                            </option>
+
+                            <option value="200 Level">
+                                200 Level
+                            </option>
+
+                            <option value="300 Level">
+                                300 Level
+                            </option>
+
+                            <option value="400 Level">
+                                400 Level
+                            </option>
+
+                            <option value="500 Level">
+                                500 Level
+                            </option>
+
+                            <option value="Postgraduate">
+                                Postgraduate
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ROW 3 -->
+
+                <div class="form-row">
+
+
+                    <div class="input-group">
+
+                        <label for="studentFaculty">
+                            Faculty
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentFaculty"
+                            placeholder="e.g. Computing and Technology"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="studentDepartment">
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentDepartment"
+                            placeholder="e.g. Software Engineering"
+                            required
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Row 4 -->
+
+                <div class="form-row">
+
+
+                    <div class="input-group">
+
+                        <label for="studentProgramme">
+                            Programme
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentProgramme"
+                            placeholder="e.g. B.Sc. Software Engineering"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="studentSession">
+                            Academic Session
+                        </label>
+
+                        <select
+                            id="studentSession"
+                            required
+                        >
+
+                            <option value="">
+                                Select session
+                            </option>
+
+                            <option value="2026/2027">
+                                2026/2027
+                            </option>
+
+                            <option value="2025/2026">
+                                2025/2026
+                            </option>
+
+                            <option value="2024/2025">
+                                2024/2025
+                            </option>
+
+                            <option value="">
+                                2023/2024
+                            </option>
+
+                            <option value="">
+                                2022/2023
+                            </option>
+
+                            <option value="">
+                                2022/2021
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Row 5 -->
+
+                <div class="form-row">
+
+
+                    <div class="input-group">
+
+                        <label for="studentPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="studentPhone"
+                            placeholder="e.g. 08012345678"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="studentEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="studentEmail"
+                            placeholder="studentname@st.tau.edu.ng"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="input-group">
+
+                    <label for="studentStatus">
+                        Student Status
+                    </label>
+
+                    <select id="studentStatus">
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                        <option value="Graduated">
+                            Graduated
+                        </option>
+
+                        <option value="Suspended">
+                            Suspended
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        id="cancelBtn"
+                        class="secondary-btn"
+                    >
+                        Cancel
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-btn"
+                    >
+                        Save Student
+                    </button>
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="student.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,327 @@
+.registration-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.06);
+    border: 1px solid #e8edf5;
+}
+
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+
+.card-title h2 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #172554;
+}
+
+
+.card-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.registration-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+}
+
+
+.form-group select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dbe2ea;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #1e293b;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.form-group select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+
+/* Unit Summary */
+
+.unit-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #eff6ff;
+    padding: 10px 16px;
+    border-radius: 10px;
+}
+
+
+.unit-summary span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+.unit-summary strong {
+    font-size: 20px;
+    color: #2563eb;
+}
+
+
+
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+
+.course-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: 0.2s ease;
+}
+
+
+.course-item:hover {
+    border-color: #93c5fd;
+    background: #f8fbff;
+}
+
+
+.course-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+.course-info {
+    flex: 1;
+}
+
+
+.course-code {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 4px;
+}
+
+
+.course-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+
+.course-meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 12px;
+}
+
+
+.course-units {
+    background: #f1f5f9;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+thead {
+    background: #f8fafc;
+}
+
+
+th {
+    text-align: left;
+    padding: 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+}
+
+
+td {
+    padding: 15px 14px;
+    border-top: 1px solid #eef2f7;
+    color: #334155;
+    font-size: 14px;
+}
+
+
+.empty-table {
+    text-align: center;
+    padding: 35px;
+    color: #94a3b8;
+}
+
+
+
+
+
+.remove-course {
+    border: none;
+    background: #fee2e2;
+    color: #dc2626;
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.remove-course:hover {
+    background: #fecaca;
+}
+
+
+
+
+
+.registration-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.registration-footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.registration-footer span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+.registration-footer strong {
+    font-size: 20px;
+    color: #172554;
+}
+
+
+.primary-btn {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+
+
+
+.no-courses {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+    color: #64748b;
+}
+
+
+
+
+
+@media (max-width: 1000px) {
+
+    .registration-form {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .card-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .registration-footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .primary-btn {
+        width: 100%;
+    }
+
+}

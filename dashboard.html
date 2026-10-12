@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#101b3d">
+    <title>SchoolSync | University Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">SS</div>
+            <div>
+                <h2>SchoolSync</h2>
+                <span>University Administration</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-item active" aria-current="page">
+                <span>▦</span> Dashboard
+            </a>
+            <a href="student.html" class="nav-item">
+                <span>♙</span> Students
+            </a>
+            <a href="lecturers.html" class="nav-item">
+                <span>♟</span> Lecturers
+            </a>
+            <a href="department.html" class="nav-item">
+                <span>▣</span> Departments
+            </a>
+
+            <p class="nav-title">ACADEMICS</p>
+
+            <a href="course.html" class="nav-item">
+                <span>▤</span> Courses
+            </a>
+            <a href="registration.html" class="nav-item">
+                <span>◫</span> Course Registration
+            </a>
+            <a href="result.html" class="nav-item">
+                <span>◈</span> Results
+            </a>
+            <a href="attendance.html" class="nav-item">
+                <span>◷</span> Attendance
+            </a>
+
+            <p class="nav-title">ADMINISTRATION</p>
+
+            <a href="report.html" class="nav-item">
+                <span>▤</span> Reports
+            </a>
+            <a href="announcements.html" class="nav-item">
+                <span>▰</span> Announcements
+            </a>
+            <a href="settings.html" class="nav-item">
+                <span>⚙</span> Settings
+            </a>
+            <a href="index.html" class="nav-item logout" id="logoutLink">
+                <span>↪</span> Logout
+            </a>
+        </nav>
+
+        <div class="sidebar-profile">
+            <div class="profile-avatar">A</div>
+            <div class="profile-info">
+                <strong id="sidebarAdminName">Administrator</strong>
+                <span>System Admin</span>
+            </div>
+
+            <div class="dashboard-menu">
+                <button type="button" id="dashboardMenuBtn"
+                        class="profile-menu" aria-label="Dashboard options"
+                        aria-expanded="false" aria-controls="dashboardDropdown">
+                    ⋮
+                </button>
+
+                <div id="dashboardDropdown" class="dashboard-dropdown hidden">
+                    <button type="button" id="refreshDashboard">
+                        ↻ Refresh Dashboard
+                    </button>
+                    <a href="report.html">View Reports</a>
+                    <a href="announcements.html">Manage Announcements</a>
+                    <a href="settings.html">Dashboard Settings</a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div class="topbar-heading">
+                <button type="button" class="mobile-menu-btn"
+                        id="mobileMenuBtn" aria-label="Toggle navigation"
+                        aria-expanded="false">☰</button>
+                <div>
+                    <p class="breadcrumb">SchoolSync / Dashboard</p>
+                    <h1>University Dashboard</h1>
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button type="button" class="notification-btn"
+                        id="notificationBtn" aria-label="Notifications">
+                    ♧
+                    <span class="notification-dot"></span>
+                </button>
+
+                <div class="top-profile">
+                    <div class="top-avatar">A</div>
+                    <div>
+                        <strong id="topAdminName">Administrator</strong>
+                        <small>System Admin</small>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- WELCOME BANNER -->
+        <section class="welcome-banner">
+            <div class="welcome-content">
+                <span class="welcome-label">UNIVERSITY ADMINISTRATION</span>
+                <h2>Welcome back, <span id="welcomeAdminName">Administrator</span> 👋</h2>
+                <p>Here's what's happening across your university today.</p>
+            </div>
+
+            <div class="welcome-date">
+                <div class="date-icon">◷</div>
+                <div class="dashboard-date">
+                    <span id="currentDay">Loading day...</span>
+                    <strong id="currentDate">Loading date...</strong>
+                    <span id="currentTime">Loading time...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="statistics-grid">
+            <article class="stat-card">
+                <div class="stat-icon students-icon">♙</div>
+                <div class="stat-content">
+                    <span>Total Students</span>
+                    <strong id="dashboardStudentCount">0</strong>
+                    <small>Registered students</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon teachers-icon">♟</div>
+                <div class="stat-content">
+                    <span>Total Lecturers</span>
+                    <strong id="dashboardLecturerCount">0</strong>
+                    <small>Academic staff</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon courses-icon">▤</div>
+                <div class="stat-content">
+                    <span>Active Courses</span>
+                    <strong id="dashboardCourseCount">0</strong>
+                    <small>Courses in the system</small>
+                </div>
+            </article>
+
+            <article class="stat-card">
+                <div class="stat-icon attendance-icon">◷</div>
+                <div class="stat-content">
+                    <span>Today's Attendance</span>
+                    <strong id="dashboardAttendanceRate">0%</strong>
+                    <small id="attendanceStatNote">No records for today</small>
+                </div>
+            </article>
+        </section>
+
+        <!-- CHART AND ACTIVITY -->
+        <section class="dashboard-grid">
+
+            <article class="dashboard-card attendance-card">
+                <div class="card-header">
+                    <div>
+                        <h3>Attendance Overview</h3>
+                        <p id="attendanceSubtitle">Attendance records by day</p>
+                    </div>
+
+                    <select id="attendancePeriod" aria-label="Attendance period">
+                        <option value="week">This Week</option>
+                        <option value="month">This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+
+                <div class="chart-summary">
+                    <div>
+                        <span>Average attendance</span>
+                        <strong id="chartAverage">0%</strong>
+                    </div>
+                    <span class="chart-legend">
+                        <i></i> Attendance rate
+                    </span>
+                </div>
+
+                <div class="attendance-chart">
+                    <div class="chart-axis" aria-hidden="true">
+                        <span>100%</span>
+                        <span>75%</span>
+                        <span>50%</span>
+                        <span>25%</span>
+                        <span>0%</span>
+                    </div>
+                    <div class="chart-bars" id="attendanceChart"
+                         role="img" aria-label="Attendance rate chart">
+                    </div>
+                </div>
+
+                <p class="chart-footnote" id="chartFootnote">
+                    Percentages are calculated from saved attendance records.
+                </p>
+            </article>
+
+            <article class="dashboard-card activity-card">
+                <div class="card-header">
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <p>Latest recorded system activities</p>
+                    </div>
+                    <button type="button" class="view-all" id="viewAllActivity">
+                        View All
+                    </button>
+                </div>
+
+                <div class="activity-list" id="recentActivityList">
+                    <div class="empty-state">
+                        <span>◷</span>
+                        <p>No recorded activity yet.</p>
+                        <small>New activity will appear here when available.</small>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-actions-card">
+            <div class="card-header">
+                <div>
+                    <h3>Quick Actions</h3>
+                    <p>Frequently used university management tools</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+                <a href="student.html" class="quick-action">
+                    <span class="quick-icon blue">♙</span>
+                    <div>
+                        <strong>Add Student</strong>
+                        <small>Register a new student</small>
+                    </div>
+                    <b>›</b>
+                </a>
+
+                <a href="lecturers.html" class="quick-action">
+                    <span class="quick-icon purple">♟</span>
+                    <div>
+                        <strong>Add Lecturer</strong>
+                        <small>Register academic staff</small>
+                    </div>
+                    <b>›</b>
+                </a>
+
+                <a href="course.html" class="quick-action">
+                    <span class="quick-icon green">▤</span>
+                    <div>
+                        <strong>Add Course</strong>
+                        <small>Create a new course</small>
+                    </div>
+                    <b>›</b>
+                </a>
+
+                <a href="attendance.html" class="quick-action">
+                    <span class="quick-icon orange">◷</span>
+                    <div>
+                        <strong>Record Attendance</strong>
+                        <small>Manage class attendance</small>
+                    </div>
+                    <b>›</b>
+                </a>
+
+                <a href="department.html" class="quick-action">
+                    <span class="quick-icon pink">▣</span>
+                    <div>
+                        <strong>Add Department</strong>
+                        <small>Manage departments</small>
+                    </div>
+                    <b>›</b>
+                </a>
+
+                <a href="report.html" class="quick-action">
+                    <span class="quick-icon teal">▧</span>
+                    <div>
+                        <strong>View Reports</strong>
+                        <small>Review university records</small>
+                    </div>
+                    <b>›</b>
+                </a>
+            </div>
+        </section>
+
+        <footer class="dashboard-footer">
+            <span>© <span id="footerYear"></span> SchoolSync</span>
+            <span>University Administration System</span>
+        </footer>
+    </main>
+</div>
+
+<div class="toast" id="dashboardToast" role="status" aria-live="polite"></div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

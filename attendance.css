@@ -1,0 +1,407 @@
+/* SCHOOLSYNC ATTENDANCE */
+
+
+.attendance-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 4px 18px rgba(15, 23, 42, 0.06);
+
+    border:
+        1px solid #e8edf5;
+
+}
+
+
+.card-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 24px;
+
+}
+
+
+.card-title h2 {
+
+    margin: 0 0 6px;
+
+    font-size: 20px;
+
+    color: #172554;
+
+}
+
+
+.card-title p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+
+/* FORM */
+
+.attendance-form {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    align-items: end;
+
+}
+
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.form-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #334155;
+
+}
+
+
+.form-group select,
+.form-group input {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid #dbe2ea;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #1e293b;
+
+    font-size: 14px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+.form-group select:focus,
+.form-group input:focus {
+
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+
+}
+
+
+.primary-btn {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    height: 44px;
+
+}
+
+
+.primary-btn:hover {
+
+    background: #1d4ed8;
+
+}
+
+
+/* STATISTICS */
+
+.attendance-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 24px;
+
+}
+
+
+.attendance-stat {
+
+    background: #ffffff;
+
+    border:
+        1px solid #e8edf5;
+
+    border-radius: 14px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(15, 23, 42, 0.05);
+
+}
+
+
+.attendance-stat span {
+
+    display: block;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.attendance-stat strong {
+
+    font-size: 28px;
+
+    color: #172554;
+
+}
+
+
+/* TABLE */
+
+.table-wrapper {
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+thead {
+
+    background: #f8fafc;
+
+}
+
+
+th {
+
+    text-align: left;
+
+    padding: 14px;
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: .04em;
+
+    color: #64748b;
+
+}
+
+
+td {
+
+    padding: 15px 14px;
+
+    border-top:
+        1px solid #eef2f7;
+
+    color: #334155;
+
+    font-size: 14px;
+
+}
+
+
+.empty-table {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #94a3b8;
+
+}
+
+
+/* STATUS BADGES */
+
+.status-badge {
+
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.status-present {
+
+    background: #dcfce7;
+
+    color: #15803d;
+
+}
+
+
+.status-absent {
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+}
+
+
+.status-late {
+
+    background: #fef3c7;
+
+    color: #b45309;
+
+}
+
+
+.status-excused {
+
+    background: #dbeafe;
+
+    color: #1d4ed8;
+
+}
+
+
+.delete-attendance {
+
+    border: none;
+
+    background: #fee2e2;
+
+    color: #dc2626;
+
+    width: 32px;
+
+    height: 32px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+.delete-attendance:hover {
+
+    background: #fecaca;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+    .attendance-form {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .attendance-stats {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .attendance-form {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .attendance-stats {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

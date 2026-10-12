@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SchoolSync | Lecturers</title>
+
+    <link
+        rel="stylesheet"
+        href="dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="lecturers.css"
+
+        
+    >
+
+   
+
+</head>
+
+
+<body>
+
+<div class="dashboard-container">
+
+
+    <!-- sidebar -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                SS
+            </div>
+
+            <div>
+
+                <h2>
+                    SchoolSync
+                </h2>
+
+                <span>
+                    University Administration
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="dashboard.html"
+                class="nav-item"
+            >
+
+                <span>▦</span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                href="student.html"
+                class="nav-item"
+            >
+
+                <span>♙</span>
+
+                Students
+
+            </a>
+
+
+            <a
+                href="lecturers.html"
+                class="nav-item active"
+            >
+
+                <span>♟</span>
+
+                Lecturers
+
+            </a>
+
+
+            <a
+                href="department.html"
+                class="nav-item"
+            >
+
+                <span>▣</span>
+
+                Departments
+
+            </a>
+
+
+            <p class="nav-title">
+                ACADEMICS
+            </p>
+
+
+            <a
+                href="course.html"
+                class="nav-item"
+            >
+
+                <span>▤</span>
+
+                Courses
+
+            </a>
+
+
+            <a
+                href="registration.html"
+                class="nav-item"
+            >
+
+                <span>◫</span>
+
+                Course Registration
+
+            </a>
+
+
+            <a
+                href="result.html"
+                class="nav-item"
+            >
+
+                <span>◈</span>
+
+                Results
+
+            </a>
+
+
+            <a
+                href="attendance.html"
+                class="nav-item"
+            >
+
+                <span>◷</span>
+
+                Attendance
+
+            </a>
+
+
+            <p class="nav-title">
+                ADMINISTRATION
+            </p>
+
+
+            <a
+                href="report.html"
+                class="nav-item"
+            >
+
+                <span>▤</span>
+
+                Reports
+
+            </a>
+
+
+            <a
+                href="announcements.html"
+                class="nav-item"
+            >
+
+                <span>▰</span>
+
+                Announcements
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="nav-item"
+            >
+
+                <span>⚙</span>
+
+                Settings
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="nav-item logout"
+            >
+
+                <span>↪</span>
+
+                Logout
+
+            </a>
+
+
+        </nav>
+
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div class="profile-info">
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <span>
+                    System Admin
+                </span>
+
+            </div>
+
+            <button class="profile-menu">
+                ⋮
+            </button>
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- main content -->
+
+    <main class="main-content">
+
+
+        <!-- Topbar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    SchoolSync / Lecturers
+                </p>
+
+                <h1>
+                    Lecturer Management
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="notification-btn">
+
+                    🔔
+
+                    <span></span>
+
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            System Admin
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Page header -->
+
+        <section class="page-header">
+
+
+            <div>
+
+                <span class="page-label">
+                    ACADEMIC STAFF
+                </span>
+
+                <h2>
+                    Lecturer Directory
+                </h2>
+
+                <p>
+                    Manage lecturer profiles, departments,
+                    academic ranks and staff records.
+                </p>
+            </div>
+
+
+            <button id="addLecturerBtn" class="primary-btn open-add-modal">
+            <span>+</span>
+            Add Lecturer
+            </button>
+
+
+        </section>
+
+
+
+        <!-- Statistics -->
+
+        <section class="lecturer-stats">
+
+
+            <div class="lecturer-stat">
+
+                <div class="lecturer-stat-icon blue">
+                    ♟
+                </div>
+
+                <div>
+
+                    <span>
+                        Total Lecturers
+                    </span>
+
+                    <strong id="totalLecturers">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="lecturer-stat">
+
+                <div class="lecturer-stat-icon green">
+                    ✓
+                </div>
+
+                <div>
+
+                    <span>
+                        Active Lecturers
+                    </span>
+
+                    <strong id="activeLecturers">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="lecturer-stat">
+
+                <div class="lecturer-stat-icon purple">
+                    ◈
+                </div>
+
+                <div>
+
+                    <span>
+                        Professors
+                    </span>
+
+                    <strong id="professorCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="lecturer-stat">
+
+                <div class="lecturer-stat-icon orange">
+                    ◉
+                </div>
+
+                <div>
+
+                    <span>
+                        Departments
+                    </span>
+
+                    <strong id="departmentCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- LECTURER DIRECTORY -->
+
+        <section class="lecturers-card">
+
+
+            <div class="lecturers-toolbar">
+
+
+                <div>
+
+                    <h3>
+                        Academic Staff Records
+                    </h3>
+
+                    <p>
+                        Registered lecturers in the university.
+                    </p>
+
+                </div>
+
+
+                <div class="lecturer-tools">
+
+
+                    <div class="search-box">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="searchLecturer"
+                            placeholder="Search by name or staff ID..."
+                        >
+
+                    </div>
+
+
+                    <select id="departmentFilter">
+
+                        <option value="all">
+                            All Departments
+                        </option>
+
+                    </select>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- TABLE -->
+
+            <div class="table-container">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                LECTURER
+                            </th>
+
+                            <th>
+                                STAFF ID
+                            </th>
+
+                            <th>
+                                RANK
+                            </th>
+
+                            <th>
+                                DEPARTMENT
+                            </th>
+
+                            <th>
+                                EMAIL
+                            </th>
+
+                            <th>
+                                STATUS
+                            </th>
+
+                            <th>
+                                ACTION
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="lecturerTableBody"
+                    >
+
+                    </tbody>
+
+
+                </table>
+
+
+
+                <!-- EMPTY STATE -->
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                        ♟
+                    </div>
+
+                    <h3>
+                        No lecturer records found
+                    </h3>
+
+                    <p>
+                        Add your first lecturer to begin
+                        building the academic staff directory.
+                    </p>
+
+                    <button
+                        id="emptyAddBtn"
+                        class="primary-btn"
+                    >
+
+                        +
+
+                        Add Lecturer
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- Lecturers modal -->
+
+<div
+    id="lecturerModal"
+    class="modal-overlay hidden"
+>
+
+
+    <div class="lecturer-modal">
+
+
+        <!-- MODAL HEADER -->
+
+        <div class="modal-header">
+
+
+            <div>
+
+                <span>
+                    ACADEMIC STAFF RECORD
+                </span>
+
+                <h2 id="modalTitle">
+                    Add New Lecturer
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close-btn"
+            >
+                ×
+            </button>
+
+
+        </div>
+
+
+
+        <!-- FORM -->
+
+        <form id="lecturerForm">
+
+
+            <!-- ROW 1 -->
+
+            <div class="form-row">
+
+
+                <div class="input-group">
+
+                    <label for="lecturerId">
+                        Staff ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lecturerId"
+                        placeholder="e.g. STF/SE/001"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lecturerName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lecturerName"
+                        placeholder="Enter lecturer's full name"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ROW 2 -->
+
+            <div class="form-row">
+
+
+                <div class="input-group">
+
+                    <label for="lecturerGender">
+                        Gender
+                    </label>
+
+                    <select
+                        id="lecturerGender"
+                        required
+                    >
+
+                        <option value="">
+                            Select gender
+                        </option>
+
+                        <option value="Male">
+                            Male
+                        </option>
+
+                        <option value="Female">
+                            Female
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lecturerRank">
+                        Academic Rank
+                    </label>
+
+                    <select
+                        id="lecturerRank"
+                        required
+                    >
+
+                        <option value="">
+                            Select academic rank
+                        </option>
+
+                        <option value="Professor">
+                            Professor
+                        </option>
+
+                        <option value="Associate Professor">
+                            Associate Professor
+                        </option>
+
+                        <option value="Senior Lecturer">
+                            Senior Lecturer
+                        </option>
+
+                        <option value="Lecturer I">
+                            Lecturer I
+                        </option>
+
+                        <option value="Lecturer II">
+                            Lecturer II
+                        </option>
+
+                        <option value="Assistant Lecturer">
+                            Assistant Lecturer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ROW 3 -->
+
+            <div class="form-row">
+
+
+                <div class="input-group">
+
+                    <label for="lecturerFaculty">
+                        Faculty
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lecturerFaculty"
+                        placeholder="e.g. Computing and Technology"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lecturerDepartment">
+                        Department
+                    </label>
+
+                    <input
+                        type="text"
+                        id="lecturerDepartment"
+                        placeholder="e.g. Software Engineering"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ROW 4 -->
+
+            <div class="form-row">
+
+
+                <div class="input-group">
+
+                    <label for="lecturerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="lecturerEmail"
+                        placeholder="lecturer@university.edu"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="lecturerPhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="lecturerPhone"
+                        placeholder="e.g. 08012345678"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- STATUS -->
+
+            <div class="input-group">
+
+                <label for="lecturerStatus">
+                    Employment Status
+                </label>
+
+                <select id="lecturerStatus">
+
+                    <option value="Active">
+                        Active
+                    </option>
+
+                    <option value="Inactive">
+                        Inactive
+                    </option>
+
+                    <option value="On Leave">
+                        On Leave
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Lecturer
+                </button>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</div>
+
+
+
+<script src="lecturers.js"></script>
+
+</body>
+
+</html>

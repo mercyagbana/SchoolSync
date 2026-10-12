@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolSync | Departments</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="department.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                SS
+            </div>
+
+            <div>
+                <h2>SchoolSync</h2>
+                <span>University Administration</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="student.html" class="nav-item">
+                <span>♙</span>
+                Students
+            </a>
+
+            <a href="lecturers.html" class="nav-item">
+                <span>♟</span>
+                Lecturers
+            </a>
+
+            <a href="department.html" class="nav-item active">
+                <span>▣</span>
+                Departments
+            </a>
+
+
+            <p class="nav-title">ACADEMICS</p>
+
+            <a href="course.html" class="nav-item">
+                <span>▤</span>
+                Courses
+            </a>
+
+            <a href="registration.html" class="nav-item">
+                <span>◫</span>
+                Course Registration
+            </a>
+
+            <a href="result.html" class="nav-item">
+                <span>◈</span>
+                Results
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>◷</span>
+                Attendance
+            </a>
+
+
+            <p class="nav-title">ADMINISTRATION</p>
+
+            <a href="report.html" class="nav-item">
+                <span>▤</span>
+                Reports
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+                <span>▰</span>
+                Announcements
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="index.html" class="nav-item logout">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div class="profile-info">
+                <strong>Administrator</strong>
+                <span>System Admin</span>
+            </div>
+
+            <button class="profile-menu">
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    SchoolSync / Departments
+                </p>
+
+                <h1>
+                    Department Management
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="notification-btn">
+                    🔔
+                    <span></span>
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>System Admin</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+
+            <div>
+
+                <span class="page-label">
+                    UNIVERSITY ACADEMICS
+                </span>
+
+                <h2>
+                    Departments
+                </h2>
+
+                <p>
+                Manage faculties, academic departments and
+                heads of department across the university.
+                </p>
+
+            </div>
+
+
+            <button
+                id="addDepartmentBtn"
+                class="primary-btn"
+            >
+                <span>+</span>
+                Add Department
+            </button>
+
+        </section>
+
+
+        <!-- STATISTICS -->
+        <section class="department-stats">
+
+            <div class="department-stat">
+
+                <div class="department-stat-icon blue">
+                ◈
+                </div>
+
+                <div>
+                    <span>Total Departments</span>
+                    <strong id="totalDepartments">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="department-stat">
+
+                <div class="department-stat-icon green">
+                ✓
+                </div>
+
+                <div>
+                    <span>Active Departments</span>
+                    <strong id="activeDepartments">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="department-stat">
+
+                <div class="department-stat-icon purple">
+                ◉
+                </div>
+
+                <div>
+                    <span>Faculties</span>
+                    <strong id="facultyCount">0</strong>
+                </div>
+
+            </div>
+
+
+            <div class="department-stat">
+
+                <div class="department-stat-icon orange">
+                ♟
+                </div>
+
+                <div>
+                    <span>Heads of Department</span>
+                    <strong id="hodCount">0</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEPARTMENT DIRECTORY -->
+        <section class="departments-card">
+
+            <div class="departments-toolbar">
+
+                <div>
+
+                    <h3>
+                        Academic Departments
+                    </h3>
+
+                    <p>
+                        Registered departments in the university.
+                    </p>
+
+                </div>
+
+
+                <div class="department-tools">
+
+                    <div class="search-box">
+
+                        <span>⌕</span>
+
+                        <input
+                            type="search"
+                            id="searchDepartment"
+                            placeholder="Search department..."
+                        >
+
+                    </div>
+
+
+                    <select id="facultyFilter">
+
+                        <option value="all">
+                            All Faculties
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- TABLE -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                            DEPARTMENT
+                            </th>
+
+                            <th>
+                            CODE
+                            </th>
+
+                            <th>
+                            FACULTY
+                            </th>
+
+                            <th>
+                            HEAD OF DEPARTMENT
+                            </th>
+
+                            <th>
+                            STUDENTS
+                            </th>
+
+                            <th>
+                            STATUS
+                            </th>
+
+                            <th>
+                            ACTION
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="departmentTableBody">
+
+                    </tbody>
+
+                </table>
+
+
+                <div
+                    id="emptyState"
+                    class="empty-state"
+                >
+
+                    <div class="empty-icon">
+                    ◈
+                    </div>
+
+                    <h3>
+                        No departments found
+                    </h3>
+
+                    <p>
+                        Add your first academic department
+                        to begin building the university structure.
+                    </p>
+
+                    <button
+                        id="emptyAddBtn"
+                        class="primary-btn"
+                    >
+                        +
+                        Add Department
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- DEPARTMENT MODAL -->
+
+<div
+    id="departmentModal"
+    class="modal-overlay hidden"
+>
+
+    <div class="department-modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <span>
+                ACADEMIC DEPARTMENT
+                </span>
+
+                <h2 id="modalTitle">
+                Add New Department
+                </h2>
+
+            </div>
+
+
+            <button
+                id="closeModal"
+                class="close-btn"
+            >
+            ×
+            </button>
+
+        </div>
+
+
+        <form id="departmentForm">
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label for="departmentCode">
+                    Department Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentCode"
+                        placeholder="e.g. SEN"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="departmentName">
+                    Department Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentName"
+                        placeholder="e.g. Software Engineering"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label for="departmentFaculty">
+                    Faculty
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentFaculty"
+                        placeholder="e.g. Computing and Applied Science"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="departmentHod">
+                        Head of Department
+                    </label>
+
+                    <input
+                        type="text"
+                        id="departmentHod"
+                        placeholder="Enter HOD name"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="input-group">
+
+                    <label for="departmentStudents">
+                        Number of Students
+                    </label>
+
+                    <input
+                        type="number"
+                        id="departmentStudents"
+                        min="0"
+                        placeholder="e.g. 120"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="departmentStatus">
+                        Department Status
+                    </label>
+
+                    <select id="departmentStatus">
+
+                        <option value="Active">
+                            Active
+                        </option>
+
+                        <option value="Inactive">
+                            Inactive
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="secondary-btn"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Department
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="department.js"></script>
+
+</body>
+</html>

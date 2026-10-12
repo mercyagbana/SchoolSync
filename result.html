@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Results | SchoolSync</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="result.css">
+
+</head>
+
+
+<body>
+
+
+<div class="dashboard-container">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <div class="sidebar-logo">
+                SS
+            </div>
+
+            <div>
+                <h2>SchoolSync</h2>
+                <span>University Administration</span>
+            </div>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="student.html" class="nav-item">
+                <span>♙</span>
+                Students
+            </a>
+
+            <a href="lecturers.html" class="nav-item">
+                <span>♟</span>
+                Lecturers
+            </a>
+
+            <a href="department.html" class="nav-item">
+                <span>▣</span>
+                Departments
+            </a>
+
+
+            <p class="nav-title">
+                ACADEMICS
+            </p>
+
+            <a href="course.html" class="nav-item">
+                <span>▤</span>
+                Courses
+            </a>
+
+            <a href="registration.html" class="nav-item">
+                <span>◫</span>
+                Course Registration
+            </a>
+
+            <a href="result.html" class="nav-item active">
+                <span>◈</span>
+                Results
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>◷</span>
+                Attendance
+            </a>
+
+
+            <p class="nav-title">
+                ADMINISTRATION
+            </p>
+
+            <a href="report.html" class="nav-item">
+                <span>▤</span>
+                Reports
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+                <span>▰</span>
+                Announcements
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="index.html" class="nav-item logout">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">
+                A
+            </div>
+
+            <div class="profile-info">
+
+                <strong>
+                    Administrator
+                </strong>
+
+                <span>
+                    System Admin
+                </span>
+
+            </div>
+
+            <button class="profile-menu">
+                ⋮
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    SchoolSync / Results
+                </p>
+
+                <h1>
+                    Academic Results
+                </h1>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+                <button class="notification-btn">
+                    🔔
+                    <span></span>
+                </button>
+
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Administrator
+                        </strong>
+
+                        <small>
+                            System Admin
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- RESULT ENTRY -->
+
+        <section class="result-card">
+
+            <div class="card-title">
+
+                <div>
+
+                    <h2>
+                        Record Student Result
+                    </h2>
+
+                    <p>
+                        Enter and manage academic results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-form">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Student
+                    </label>
+
+                    <select id="studentSelect">
+
+                        <option value="">
+                            Select Student
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Academic Session
+                    </label>
+
+                    <select id="sessionSelect">
+
+                        <option value="">
+                            Select Session
+                        </option>
+
+                        <option value="2021/2022">
+                            2021/2022
+                        </option>
+
+                        <option value="2022/2023">
+                            2022/2023
+                        </option>
+
+                        <option value="2023/2024">
+                            2023/2024
+                        </option>
+
+                        <option value="2024/2025">
+                            2024/2025
+                        </option>
+
+                        <option value="2025/2026">
+                            2025/2026
+                        </option>
+
+                        <option value="2026/2027">
+                            2026/2027
+                        </option>
+
+                        <option value="2027/2028">
+                            2027/2028
+                        </option>
+
+                        <option value="2028/2029">
+                            2028/2029
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Semester
+                    </label>
+
+                    <select id="semesterSelect">
+
+                        <option value="">
+                            Select Semester
+                        </option>
+
+                        <option value="First Semester">
+                            First Semester
+                        </option>
+
+                        <option value="Second Semester">
+                            Second Semester
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Course
+                    </label>
+
+                    <select id="courseSelect">
+
+                        <option value="">
+                            Select Course
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Score
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="scoreInput"
+                        min="0"
+                        max="100"
+                        placeholder="Enter score"
+                    >
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="saveResultBtn"
+                >
+                    Save Result
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT SUMMARY -->
+
+        <section class="result-stats">
+
+            <div class="result-stat">
+
+                <span>
+                    Total Results
+                </span>
+
+                <strong id="totalResults">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="result-stat">
+
+                <span>
+                    A Grades
+                </span>
+
+                <strong id="aGrades">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="result-stat">
+
+                <span>
+                    B Grades
+                </span>
+
+                <strong id="bGrades">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="result-stat">
+
+                <span>
+                    Failed
+                </span>
+
+                <strong id="failedResults">
+                    0
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS TABLE -->
+
+        <section class="result-card">
+
+            <div class="card-title">
+
+                <div>
+
+                    <h2>
+                        Recorded Results
+                    </h2>
+
+                    <p>
+                        View and manage student results.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Course
+                            </th>
+
+                            <th>
+                                Session
+                            </th>
+
+                            <th>
+                                Semester
+                            </th>
+
+                            <th>
+                                Score
+                            </th>
+
+                            <th>
+                                Grade
+                            </th>
+
+                            <th>
+                                Grade Point
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="resultTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="empty-table"
+                            >
+                                No results recorded yet.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="result.js"></script>
+
+</body>
+
+</html>

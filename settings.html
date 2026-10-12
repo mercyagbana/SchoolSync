@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | SchoolSync</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            <div class="sidebar-logo">SS</div>
+
+            <div>
+                <h2>SchoolSync</h2>
+                <span>University Administration</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <p class="nav-title">MAIN MENU</p>
+
+            <a href="dashboard.html" class="nav-item">
+                <span>▦</span>
+                Dashboard
+            </a>
+
+            <a href="student.html" class="nav-item">
+                <span>♙</span>
+                Students
+            </a>
+
+            <a href="lecturers.html" class="nav-item">
+                <span>♟</span>
+                Lecturers
+            </a>
+
+            <a href="department.html" class="nav-item">
+                <span>▣</span>
+                Departments
+            </a>
+
+            <p class="nav-title">ACADEMICS</p>
+
+            <a href="course.html" class="nav-item">
+                <span>▤</span>
+                Courses
+            </a>
+
+            <a href="registration.html" class="nav-item">
+                <span>◫</span>
+                Course Registration
+            </a>
+
+            <a href="result.html" class="nav-item">
+                <span>◈</span>
+                Results
+            </a>
+
+            <a href="attendance.html" class="nav-item">
+                <span>◷</span>
+                Attendance
+            </a>
+
+            <p class="nav-title">ADMINISTRATION</p>
+
+            <a href="report.html" class="nav-item">
+                <span>▤</span>
+                Reports
+            </a>
+
+            <a href="announcements.html" class="nav-item">
+                <span>▰</span>
+                Announcements
+            </a>
+
+            <a href="settings.html" class="nav-item active">
+                <span>⚙</span>
+                Settings
+            </a>
+
+            <a href="index.html" class="nav-item logout">
+                <span>↪</span>
+                Logout
+            </a>
+
+        </nav>
+
+        <div class="sidebar-profile">
+
+            <div class="profile-avatar">A</div>
+
+            <div class="profile-info">
+                <strong>Administrator</strong>
+                <span>System Admin</span>
+            </div>
+
+            <button class="profile-menu">⋮</button>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+
+                <p class="breadcrumb">
+                    SchoolSync / Settings
+                </p>
+
+                <h1>
+                    System Settings
+                </h1>
+
+            </div>
+
+            <div class="topbar-actions">
+
+                <button class="notification-btn">
+                    🔔
+                    <span></span>
+                </button>
+
+                <div class="top-profile">
+
+                    <div class="top-avatar">
+                        A
+                    </div>
+
+                    <div>
+                        <strong>Administrator</strong>
+                        <small>System Admin</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- UNIVERSITY INFORMATION -->
+
+        <section class="settings-card">
+
+            <div class="settings-heading">
+
+                <div>
+                    <h2>University Information</h2>
+
+                    <p>
+                        Manage the basic information displayed by SchoolSync.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="universityForm">
+
+                <div class="settings-grid">
+
+                    <div class="form-group">
+
+                        <label for="universityName">
+                            University Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="universityName"
+                            value="Thomas Adewumi University"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="universityCode">
+                            University Code
+                        </label>
+
+                        <input
+                            type="text"
+                            id="universityCode"
+                            value="TAU"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="academicSession">
+                            Current Academic Session
+                        </label>
+
+                        <select id="academicSession">
+
+                            <option>2025/2026</option>
+                            <option selected>2026/2027</option>
+                            <option>2027/2028</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="currentSemester">
+                            Current Semester
+                        </label>
+
+                        <select id="currentSemester">
+
+                            <option selected>
+                                First Semester
+                            </option>
+
+                            <option>
+                                Second Semester
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save University Settings
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <section class="settings-card">
+
+            <div class="settings-heading">
+
+                <div>
+                    <h2>Administrator Profile</h2>
+
+                    <p>
+                        Update the administrator information used by the system.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="profileForm">
+
+                <div class="settings-grid">
+
+                    <div class="form-group">
+
+                        <label for="adminName">
+                            Administrator Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminName"
+                            value="Administrator"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="adminRole">
+                            Role
+                        </label>
+
+                        <input
+                            type="text"
+                            id="adminRole"
+                            value="System Admin"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="adminEmail">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="adminEmail"
+                            value="admin@schoolsync.edu"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-btn"
+                >
+                    Save Profile
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- SYSTEM PREFERENCES -->
+
+        <section class="settings-card">
+
+            <div class="settings-heading">
+
+                <div>
+                    <h2>System Preferences</h2>
+
+                    <p>
+                        Control general SchoolSync behaviour.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="preference-list">
+
+                <div class="preference-item">
+
+                    <div>
+
+                        <strong>
+                            Email Notifications
+                        </strong>
+
+                        <span>
+                            Receive notifications about important system activities.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="emailNotifications"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preference-item">
+
+                    <div>
+
+                        <strong>
+                            Attendance Alerts
+                        </strong>
+
+                        <span>
+                            Enable alerts when attendance records are updated.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="attendanceAlerts"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="preference-item">
+
+                    <div>
+
+                        <strong>
+                            Automatic Data Saving
+                        </strong>
+
+                        <span>
+                            Automatically save changes made throughout the system.
+                        </span>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="autoSave"
+                            checked
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATA MANAGEMENT -->
+
+        <section class="settings-card danger-card">
+
+            <div class="settings-heading">
+
+                <div>
+
+                    <h2>Data Management</h2>
+
+                    <p>
+                        Manage locally stored SchoolSync information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="data-actions">
+
+                <div>
+
+                    <strong>
+                        Clear System Data
+                    </strong>
+
+                    <span>
+                        This removes students, courses, results, attendance,
+                        registrations and announcements stored in this browser.
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="danger-btn"
+                    id="clearDataBtn"
+                >
+                    Clear Data
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="settings.js"></script>
+
+</body>
+</html>
